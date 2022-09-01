@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'article.dart';
+import 'widgets/custom_scaffold.dart';
 
 class ArticleDetailPage extends StatelessWidget {
   static const routeName = '/article_detail';
@@ -69,13 +70,19 @@ class ArticleWebView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('News App'),
-      ),
+    // return Scaffold(
+    //   appBar: AppBar(
+    //     title: const Text('News App'),
+    //   ),
+    //   body: WebView(
+    //     initialUrl: url,
+    //     // javascriptMode: JavascriptMode.unrestricted,
+    //   ),
+    // );
+
+    return CustomScaffold(
       body: WebView(
         initialUrl: url,
-        javascriptMode: JavascriptMode.unrestricted,
       ),
     );
   }
